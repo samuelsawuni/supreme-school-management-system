@@ -1,24 +1,29 @@
 # Supreme School Management System
 
-Initial front-end prototype for a Ghana school management system.
+A Ghana-focused school management system for student records, fee collection, attendance, teachers, classes and reports.
 
-## Included in Version 1
-- Admin dashboard
-- Fee collection totals in GH₵
-- Outstanding balances
-- Student list
-- Payment history
-- Attendance overview
-- Responsive layout
+## Supabase setup
 
-## Next development
-1. Real authentication for Admin and Teachers
-2. Database
-3. Teacher-specific attendance marking
-4. Add/edit students and classes
-5. Fee setup by class and academic term
-6. Printable receipts
-7. Reports and exports
-8. Secure deployment with a database/backend
+1. Open the Supabase project for this application.
+2. Open **SQL Editor** and run `supabase.sql` from this repository.
+3. In **Authentication → Users**, create the administrator account that will sign in to the website.
+4. Deploy/enable GitHub Pages for the repository.
 
-> This prototype uses demo data only. Do not put real student or payment information into the public GitHub repository until a secure backend/database is connected.
+The browser uses the Supabase **publishable key** only. The `service_role` key must never be placed in this repository.
+
+## Current version
+
+- Supabase Auth admin login/logout
+- Live student records from Supabase
+- Add students
+- Record fee payments
+- Fee collection and outstanding-balance dashboard
+- Attendance records by date/class
+- Teacher management
+- Class management
+- Outstanding-fees report with print support
+- Responsive desktop/mobile layout
+
+## Database
+
+The database schema and Row Level Security policies are in `supabase.sql`. All school data tables require an authenticated Supabase user.
