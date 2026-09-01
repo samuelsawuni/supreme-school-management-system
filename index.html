@@ -7,29 +7,49 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="brand"><div class="logo">S</div><div><strong>Supreme</strong><span>School Management</span></div></div>
-    <nav>
-      <button class="nav-item active" data-page="dashboard">⌂ <span>Dashboard</span></button>
-      <button class="nav-item" data-page="students">👥 <span>Students</span></button>
-      <button class="nav-item" data-page="fees">₵ <span>Fees & Payments</span></button>
-      <button class="nav-item" data-page="attendance">✓ <span>Attendance</span></button>
-      <button class="nav-item" data-page="teachers">👨‍🏫 <span>Teachers</span></button>
-      <button class="nav-item" data-page="classes">▦ <span>Classes</span></button>
-      <button class="nav-item" data-page="reports">▤ <span>Reports</span></button>
-    </nav>
-    <div class="sidebar-footer">Admin Panel<br><small>Ghana Cedis (GH₵)</small></div>
-  </aside>
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-logo">S</div>
+      <h1>Supreme School</h1>
+      <p>Management System</p>
+      <form id="login-form">
+        <label>Email</label>
+        <input id="login-email" type="email" required autocomplete="username" placeholder="Admin email">
+        <label>Password</label>
+        <input id="login-password" type="password" required autocomplete="current-password" placeholder="Password">
+        <button class="btn login-btn" type="submit">Sign in</button>
+        <div id="login-error" class="form-error"></div>
+      </form>
+    </div>
+  </div>
 
-  <main class="main">
-    <header>
-      <div><p class="eyebrow">SCHOOL ADMINISTRATION</p><h1 id="page-title">Dashboard</h1></div>
-      <div class="admin">● Admin</div>
-    </header>
+  <div id="app-shell" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">S</div><div><strong>Supreme</strong><span>School Management</span></div></div>
+      <nav>
+        <button class="nav-item active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="students">👥 <span>Students</span></button>
+        <button class="nav-item" data-page="fees">₵ <span>Fees & Payments</span></button>
+        <button class="nav-item" data-page="attendance">✓ <span>Attendance</span></button>
+        <button class="nav-item" data-page="teachers">👨‍🏫 <span>Teachers</span></button>
+        <button class="nav-item" data-page="classes">▦ <span>Classes</span></button>
+        <button class="nav-item" data-page="reports">▤ <span>Reports</span></button>
+      </nav>
+      <div class="sidebar-footer">Admin Panel<br><small>Ghana Cedis (GH₵)</small></div>
+    </aside>
 
-    <section id="app"></section>
-  </main>
+    <main class="main">
+      <header>
+        <div><p class="eyebrow">SCHOOL ADMINISTRATION</p><h1 id="page-title">Dashboard</h1></div>
+        <div class="admin"><span>●</span> <span id="admin-email">Admin</span> <button id="logout-btn" class="logout">Logout</button></div>
+      </header>
+      <div id="loading" class="loading hidden">Loading...</div>
+      <section id="app"></section>
+    </main>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
